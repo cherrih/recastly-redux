@@ -9,10 +9,16 @@ import handleVideoSearch from '../actions/search.js';
 //     }
 // }
 
-//mapDispatchToProps
+var mapDispatchToProps = dispatch => {
+    return {
+      handleSearchInputChange: q => {
+        dispatch(handleVideoSearch(q))
+      }
+    }
+}
 
 
-var SearchContainer = () => {};
+var SearchContainer = connect(null, mapDispatchToProps)(Search);
 
 //TODO: define a SearchContainer component which will hook up your action
 // dispatchers with your search component props.
